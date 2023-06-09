@@ -21,7 +21,9 @@ const Ticket = ({ ticket, setCurrentId }) => {
     const username = localStorage.getItem("user");
     
 
-const openTicket = () => {history.push(`/tickets/${ticket._id}`)};
+const openTicket = () => {
+    localStorage.setItem("ticket",JSON.stringify(ticket));
+    history.push(`/tickets/${ticket._id}`)};
 
     return (
         

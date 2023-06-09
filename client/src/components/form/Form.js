@@ -38,9 +38,11 @@ const Form = ({ currentId, setCurrentId }) => {
         if(currentId) {
             dispatch(updateTicket(currentId, ticketData))
             clear();
+            window.location.reload();
         }else {
             dispatch(createTicket(ticketData))
             clear();
+            window.location.reload();
         }
         
     }

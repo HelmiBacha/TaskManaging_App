@@ -11,13 +11,15 @@ import { getTicket} from '../../actions/tickets';
 const TicketDetails = () => {
   
   console.log('TICKET DETAILS');
-    const { ticket, tickets, isLoading } = useSelector((state) => state.tickets);
+    //const { ticket, isLoading } = useSelector((state) => state.tickets);
     const dispatch = useDispatch();
     const history = useHistory();
     const classes = useStyles();
     const { id } = useParams();
+   const ticket = JSON.parse(localStorage.getItem("ticket"));
 
-
+console.log(id);
+console.log(ticket);
     useEffect(() => {
         dispatch(getTicket(id))
     }, [id]);
@@ -27,11 +29,11 @@ const TicketDetails = () => {
     if(!ticket) return console.log('no ticket');
 
 
-    if(isLoading) {
-        return <Paper elevation={6} className={classes.loadingPaper}>
+   /* if(isLoading) {
+        return (<Paper elevation={6} className={classes.loadingPaper}>
             <CircularProgress size="7em"/>
-        </Paper>
-    }
+        </Paper>);
+    };*/
 
   return (
       <Paper style={{ padding: '20px', borderRadius: '15px' }} elevation={6}>    

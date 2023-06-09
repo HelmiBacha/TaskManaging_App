@@ -27,14 +27,16 @@ return (
 
         <Typography component={Link} to="/" className={classes.heading} variant="h6" align="center">Home</Typography>
         
-        <Typography component={Link} to="/admin/users" className={classes.heading} variant="h6" align="center" style={{marginLeft: "300px"}}>Users Management</Typography>
+        <Typography component={Link} to="/admin/users" className={classes.heading} variant="h6" align="center" style={{marginLeft: "50px"}}>Users Management</Typography>
+        <Typography component={Link} to="/event" className={classes.heading} variant="h6" align="center" style={{marginLeft: "50px"}}>Planning Mangement</Typography>
+        <Typography component={Link} to="/leaves" className={classes.heading} variant="h6" align="center" style={{marginLeft: "50px"}}>Leave management</Typography>
         </div>
         <Toolbar className={classes.toolbar}>
           {user !==''? (
               <div className={classes.profile}>
                   <Avatar className={classes.purple} alt={user.name} >{user.charAt(0)}</Avatar>
                     <Typography className={classes.userName} variant="h6">{user}</Typography>
-                    <Button variant="contained" className={classes.logout} color="secondary" onClick={() => logout()}>Logout</Button>
+                    <Button variant="contained" className={classes.logout} variant="contained" color="secondary" onClick={() => logout()}>Logout</Button>
               </div>
           ) : ( 
             <Button component={Link} to="/login" variant="contained" color="primary">Sign In</Button>

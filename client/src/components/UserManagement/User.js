@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Button } from '@material-ui/core';
 
+import { Card, CardActions, CardContent, CardMedia, Typography, ButtonBase, Grid } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 import {Link} from 'react-router-dom';
@@ -34,6 +35,20 @@ const User = () => {
 
     
     console.log(data);
+
+    const role = localStorage.getItem('role');
+    if(role !== 'Admin') return (
+        <Grid  container alignItems="stretch" spacing={3}>
+                
+        <Card  raised elevation={6}>
+
+
+            <div >
+              <Typography variant="h6">You don't have permission to access this page</Typography>
+              </div>
+              </Card>
+            </Grid>
+    )
 
   return (
     

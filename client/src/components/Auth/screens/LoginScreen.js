@@ -33,6 +33,7 @@ const LoginScreen = ({ history }) => {
       localStorage.setItem("authToken", data.token);
       localStorage.setItem("user", data.user.username);
       localStorage.setItem("email", data.user.email);
+      localStorage.setItem("role", data.user.role);
       console.log(data.user.username);
       
 

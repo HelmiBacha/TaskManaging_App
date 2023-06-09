@@ -22,7 +22,7 @@ const Tickets = ({ setCurrentId }) => {
 
 
             <div className={classes.overlay}>
-              <Typography variant="h6">Please login to cunsult your tasks</Typography>
+              <Typography variant="h6">Please login to consult your tasks</Typography>
               </div>
               </Card>
             </Grid>
