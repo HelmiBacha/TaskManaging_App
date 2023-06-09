@@ -6,7 +6,9 @@ import dotenv from 'dotenv';
 import ticketRoutes from './routes/tickets.js';
 import authRoutes from './routes/auth.js';
 import privateRoutes from './routes/private.js';
+import planningRoute from './routes/planning.js';
 import userRoute from './routes/users.js';
+import leaveRoute from './routes/leave.js';
 
 
 
@@ -29,6 +31,8 @@ app.use("/api/auth", authRoutes)
 app.use("/api/private", privateRoutes)
 app.use('/Home', ticketRoutes);
 app.use("/admin", userRoute);
+app.use("/planning", planningRoute);
+app.use("/leave", leaveRoute);
 
 //DB connection 
 mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
